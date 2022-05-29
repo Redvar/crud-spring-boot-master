@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>User</title>
+</head>
+<body>
+<h1><p>User: <span th:text="${user.username}">User</span></p></h1>
+<table border="1">
+    <tr>
+        <th>id</th>
+        <th>First name</th>
+        <th>Last name</th>
+        <th>Username</th>
+    </tr>
+    <tr>
+        <td th:utext="${user.id}">ID</td>
+        <td th:utext="${user.firstName}">First Name</td>
+        <td th:utext="${user.lastName}">Last Name</td>
+        <td th:utext="${user.username}">Username</td>
+    </tr>
+</table>
+<h1>
+    <div th:align="left">
+        <form th:action="@{/logout}" method="POST">
+            <input type="submit" value="Logout"/>
+        </form>
+    </div>
+</h1>
+</body>
+</html>
